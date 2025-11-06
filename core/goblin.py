@@ -1,6 +1,5 @@
-import random
-import orc
-
+# import random
+from . import orc
 
 
 class Goblin(orc.Monster):

@@ -13,9 +13,23 @@ class Monster:
 
     def speak(self):
         print(f'{self.type} {self.name} is furious!')
+    
+    def plus_power(self, weapon, power):
+        if weapon == 'knife':
+            power *= 0.5
+        elif weapon == 'sword':
+            power == power
+        elif weapon == 'axe':
+            power *= 1.5
+        return power
 
-    def attack(self):
-        pass
+
+
+
+    def attack(self, player, hp):
+        hp = self.plus_power(self.weapon, hp)
+        player.hp -= hp
+        return
 
 
 

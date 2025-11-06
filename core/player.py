@@ -2,22 +2,24 @@ import random
 
 
 class Player:
-    def __init__(self, name, speed, power, armor_rating, profession):
+    def __init__(self, name, profession):
         self.name = name
         self.hp = 50 # start value
-        self.speed = speed # random 5 - 10
-        self.power = power # random 5 - 10. if fighter: + 2
-        self.armor_rayig = armor_rating # random 5 - 15
+        self.speed = random.randint(5, 10) # random 5 - 10
+        self.power = random.randint(5, 10) # random 5 - 10. if fighter: + 2
+        self.armor_rayig = random.randint(5, 15) # random 5 - 15
         self.profession = profession # 'fighter' or 'cure'
-
+        
+        if profession == 'fighter':
+            self.power += 2
+        
+        if profession == 'cure':
+            self.hp += 10
+        
 
     def speak(self):
         print(f'I am {self.name}.')
 
-    def attack(self):
-        pass
-
-
-
-p1 = Player('Yosef', 8, 7, 12, 'fighter')
-p1.speak()
+    def attack(self, monster, hp):
+        monster.hp -= hp
+        return

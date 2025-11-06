@@ -12,7 +12,7 @@ class Monster:
         self.type = type
 
     def speak(self):
-        print(f'{self.type} {self.name} is furious!')
+        print(f'{self.type} {self.name} is furious! My weapon is {self.weapon}🤬')
     
     def plus_power(self, weapon, power):
         if weapon == 'knife':

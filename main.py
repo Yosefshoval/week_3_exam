@@ -1,4 +1,4 @@
-from . import game
+import game
 # from core import orc, goblin, player
 # import random
 
